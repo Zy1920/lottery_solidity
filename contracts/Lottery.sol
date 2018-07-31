@@ -1,12 +1,12 @@
 pragma solidity ^0.4.17;
 
 contract Lottery{
-    address public maneger;
+    address public manager;
     address[] public players;
 
     //构造方法中完成manager的初始化
     function Lottery() public{
-        maneger=msg.sender;
+        manager=msg.sender;
     }
 
     //投注流程，注意需要投注金额的确认
@@ -53,7 +53,7 @@ contract Lottery{
     }
 
     modifier onlyManagerCanCall(){
-        require(msg.sender==manager);
+        require(msg.sender == manager);
         _;
     }
 
